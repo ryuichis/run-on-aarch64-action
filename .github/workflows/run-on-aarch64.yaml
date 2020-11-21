@@ -14,6 +14,7 @@ jobs:
           env: |
             test_env: abc
             another_env: xyz
+            module: "reporters core"
           install: |
             apt-get update
             apt-get install -y curl git g++ python python3 cmake zlib1g-dev libncurses-dev
@@ -26,8 +27,5 @@ jobs:
             cd oclint
             git checkout use-system-llvm
             cd oclint-scripts
-            ./clang
-            ./googleTest co
-            ./googleTest build
-            ./test core -no-ninja
+            ./gh-actions test ${module}
           
