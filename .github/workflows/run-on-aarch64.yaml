@@ -16,7 +16,7 @@ jobs:
             another_env: xyz
           install: |
             apt-get update
-            apt-get install -y python3 cmake g++ curl git
+            apt-get install -y curl git g++ python python3
           run: |
             uname -a
             python3 --version
