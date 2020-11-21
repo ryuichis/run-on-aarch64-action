@@ -25,7 +25,7 @@ jobs:
             git clone https://github.com/ryuichis/oclint
             cd oclint
             git checkout use-system-llvm
-            cd oclint-script
+            cd oclint-scripts
             ./clang
             ./googleTest co
             ./googleTest build
