@@ -16,9 +16,16 @@ jobs:
             another_env: xyz
           install: |
             apt-get update
-            apt-get install -y python3 cmake g++
+            apt-get install -y python3 cmake g++ curl
           run: |
             uname -a
             python3 --version
             echo ${test_env}
             echo ${another_env}
+            git clone https://github.com/ryuichis/oclint
+            cd oclint/oclint-scripts
+            ./clang
+            ./googleTest co
+            ./googleTest build
+            ./test core
+          
