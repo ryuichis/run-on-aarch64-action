@@ -23,7 +23,9 @@ jobs:
             echo ${test_env}
             echo ${another_env}
             git clone https://github.com/ryuichis/oclint
-            cd oclint/oclint-scripts
+            cd oclint
+            git checkout use-system-llvm
+            cd oclint-script
             ./clang
             ./googleTest co
             ./googleTest build
