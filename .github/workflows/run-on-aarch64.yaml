@@ -11,9 +11,14 @@ jobs:
           arch: aarch64
           distro: ubuntu20.04
           githubToken: ${{ github.token }}
+          env: |
+            test_env: abc
+            another_env: xyz
           install: |
             apt-get update
             apt-get install -y python3 cmake g++
           run: |
             uname -a
             python3 --version
+            echo ${test_env}
+            echo ${another_env}
