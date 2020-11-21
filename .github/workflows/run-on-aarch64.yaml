@@ -1,0 +1,19 @@
+name: Run on AArch64
+on: [push, pull_request]
+
+jobs:
+  job:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v1
+      - uses: uraimo/run-on-arch-action@v2.0.7
+        with:
+          arch: aarch64
+          distro: ubuntu20.04
+          githubToken: ${{ github.token }}
+          install: |
+            apt-get update
+            apt-get install -y python3 cmake g++
+          run: |
+            uname -a
+            python3 --version
